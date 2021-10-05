@@ -21,7 +21,7 @@ app.get('/character', (req, res) => {
 
 app.get('/charactersByProfile', (req, res) => {
   const { profile } = req.query;
-  res.send(myCharacters.find((character) => character.role === profile));
+  res.send(myCharacters.filter((character) => character.role === profile));
 });
 
 app.post('/newCharacter', (req, res) => {
